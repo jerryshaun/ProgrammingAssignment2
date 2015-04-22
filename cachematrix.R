@@ -64,25 +64,3 @@ cacheSolve <- function(x) {
     
     return(inv)
 }
-
-testrun = function() {
-    
-    set.seed(1110201)
-    r = rnorm(1000000)
-    mat=matrix(r, nrow=1000, ncol=1000)
-    
-    ##mat = rbind(c(1, -1/4), c(-1/4,1))
-    
-
-    temp = makeCacheMatrix(mat)
-    
-    start.time = Sys.time()
-    cacheSolve(temp)
-    dur = Sys.time() - start.time
-    print(dur)
-    
-    start.time = Sys.time()
-    cacheSolve(temp)
-    dur = Sys.time() - start.time
-    print(dur)
-}
